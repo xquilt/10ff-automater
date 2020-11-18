@@ -1,4 +1,8 @@
 
+var inputField = document.getElementsByTagName("input")[0] ; 
+var newInput = new InputEvent("input") ; 
+var itemsCount = document.querySelector(".place").childElementCount ; 
+
 
 for  (let i = 0 ; i < itemsCount ; i ++  ) {
 
@@ -43,6 +47,9 @@ for  (let i = 0 ; i < itemsCount ; i ++  ) {
             
                1000 
 
+
          )
+
+
 
     }
