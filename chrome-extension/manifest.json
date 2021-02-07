@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name":"10ff.net hack",
+  "version":"3",
+
+  "description":"just a small extension to automate characters entry 10ff.net typing competition",
+
+  "author":"mostafa",
+  "content_scripts" :[
+    {
+      "matches":["*://*.10ff.net/*"],
+      "js":["file.js"]
+    }
+  ],
+
+  "externally_connectable":{
+    "matches":["*://.10ff.net/*"]
+  }
+
+}
