@@ -19,33 +19,27 @@ function sleep(milliseocnds) {
 /*
 - User input's data type validation
 - This fucntion should be in a more compact form,
-and the variable should be returned somehow to be used somewhere else.
+and the dangling variable should be returned somehow to be used somewhere else.
+- This function will be extended enabling it to be more lenient with user's probable input errors
 */
 function promptValueCheck() {
-    let desiredWpmSpeed = window.prompt('Add the desired Speed (WPM)!')
-    if (Number.isInteger(parseInt(desiredWpmSpeed))) {
+    desiredWpmSpeed = window.prompt('Add the desired Speed (WPM)!')
+	// The order of the if-else statement are ascendingly sorted based on their conditions' computational operations
+	if ( desiredWpmSpeed === null ){
+		return (false)
+	}
+	else if ( Number.isInteger(parseInt(desiredWpmSpeed)) ) {
+		desiredWpmSpeed = parseInt(desiredWpmSpeed)
         return (true)
-    } else {
-        return (false)
     }
+	else if ( desiredWpmSpeed.match(/\d+/) !== null ) {
+		desiredWpmSpeed = parseInt(desiredWpmSpeed.match(/\d+/)[0])
+		return (true)
+	}
+	else {
+		return (false)
+	}
 }
-
-console.log(Number.isInteger(someValue))
-
-let someValue = '20'
-console.log(parseInt('10'))
-console.log(parseInt('10.02'))
-console.log(parseInt('10.33'))
-console.log(parseFloat('10.33'))
-console.log(Number('10.33'))
-console.log(parseInt('10 20 30'))
-console.log(parseInt(' 10 '))
-console.log(Number.isInteger(parseInt(' 10 ')))
-console.log(parseInt('He was 10'))
-console.log(parseInt('10 He was '))
-console.log(Number('10 He was '))
-console.log(Number('He was 10'))
-
 
 function addWord() {
     try {
